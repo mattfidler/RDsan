@@ -2,7 +2,7 @@
 #set -e -x
 
 #export ASAN_OPTIONS='detect_leaks=0'
-export ASAN_OPTIONS='detect_leaks=0:detect_odr_violation=1'
+export ASAN_OPTIONS='detect_leaks=0'
 export UBSAN_OPTIONS='print_stacktrace=1'
 export RJAVA_JVM_STACK_WORKAROUND=0
 export RGL_USE_NULL=true
