@@ -2,7 +2,7 @@
 #set -e -x
 
 #export ASAN_OPTIONS='detect_leaks=0'
-export ASAN_OPTIONS='detect_leaks=0:detect_odr_violation=0'
+export ASAN_OPTIONS='detect_leaks=0:detect_odr_violation=1'
 export UBSAN_OPTIONS='print_stacktrace=1'
 export RJAVA_JVM_STACK_WORKAROUND=0
 export RGL_USE_NULL=true
@@ -20,12 +20,12 @@ dirname="RD${suffix}"
 # MAIN_LDFLAGS="-fsanitize=address,undefined -pthread"
 # ' >> /tmp/r-source/config.site
 
-# rm -rf ~/.R
-# mkdir ~/.R
-# echo 'CC = gcc -std=gnu99 -fsanitize=address,undefined -fno-omit-frame-pointer
-# F77 = gfortran -fsanitize=address
-# FC = gfortran -fsanitize=address
-# ' > ~/.R/Makevars
+rm -rf ~/.R
+mkdir ~/.R
+echo 'CC = gcc -std=gnu99 -fsanitize=address,undefined -fno-omit-frame-pointer
+F77 = gfortran -fsanitize=address
+FC = gfortran -fsanitize=address
+' > ~/.R/Makevars
 
 export CC="gcc -std=gnu99 -fsanitize=address,undefined -fno-omit-frame-pointer"
 export F77="gfortran -fsanitize=address"
