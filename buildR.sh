@@ -55,20 +55,20 @@ mkdir -p /usr/local/${dirname}/
 
 cd /tmp/r-source
 
-# echo 'CXX="g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer"
-# CFLAGS="-g -O0 -Wall -pedantic -mtune=native -fsanitize=address"
-# DEFS=-DSWITCH_TO_REFCNT
-# FFLAGS="-g -O0 -mtune=native"
-# CXXFLAGS="-g -O0 -Wall -pedantic -mtune=native"
-# MAIN_LDFLAGS="-fsanitize=address,undefined -pthread"
-# ' >> /tmp/r-source/config.site
+echo 'CXX="g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer"
+CFLAGS="-g -O0 -Wall -pedantic -mtune=native -fsanitize=address"
+DEFS=-DSWITCH_TO_REFCNT
+FFLAGS="-g -O0 -mtune=native"
+CXXFLAGS="-g -O0 -Wall -pedantic -mtune=native"
+MAIN_LDFLAGS="-fsanitize=address,undefined -pthread"
+' >> /tmp/r-source/config.site
 
-rm -rf ~/.R
-mkdir ~/.R
-echo 'CC = gcc -std=gnu99 -fsanitize=address,undefined -fno-omit-frame-pointer
-F77 = gfortran -fsanitize=address
-FC = gfortran -fsanitize=address
-' > ~/.R/Makevars
+# rm -rf ~/.R
+# mkdir ~/.R
+# echo 'CC = gcc -std=gnu99 -fsanitize=address,undefined -fno-omit-frame-pointer
+# F77 = gfortran -fsanitize=address
+# FC = gfortran -fsanitize=address
+# ' > ~/.R/Makevars
 
 export CC="gcc -std=gnu99 -fsanitize=address,undefined -fno-omit-frame-pointer"
 export F77="gfortran -fsanitize=address"
