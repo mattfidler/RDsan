@@ -12,10 +12,10 @@ dirname="RD${suffix}"
 
 
 # echo 'CXX="g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer"
-# CFLAGS="-g -O2 -Wall -pedantic -mtune=native -fsanitize=address"
+# CFLAGS="-g -O0 -Wall -pedantic -fsanitize=address"
 # DEFS=-DSWITCH_TO_REFCNT
-# FFLAGS="-g -O2 -mtune=native"
-# CXXFLAGS="-g -O2 -Wall -pedantic -mtune=native"
+# FFLAGS="-g -O0"
+# CXXFLAGS="-g -O0 -Wall -pedantic"
 # MAIN_LDFLAGS="-fsanitize=address,undefined -pthread"
 # ' >> /tmp/r-source/config.site
 
@@ -31,10 +31,10 @@ export F77="gfortran -fsanitize=address"
 export FC="gfortran -fsanitize=address"
 
 export CXX="g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer"
-export CFLAGS="-g -O0 -Wall -pedantic -mtune=native -fsanitize=address"
+export CFLAGS="-g -O0 -Wall -pedantic -fsanitize=address"
 export DEFS=-DSWITCH_TO_REFCNT
-export FFLAGS="-g -O0 -mtune=native"
-export CXXFLAGS="-g -O0 -Wall -pedantic -mtune=native"
+export FFLAGS="-g -O0"
+export CXXFLAGS="-g -O0 -Wall -pedantic"
 export MAIN_LDFLAGS="-fsanitize=address,undefined -pthread"
 
 export configure_flags="--without-recommended-packages --disable-openmp"

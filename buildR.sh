@@ -75,10 +75,10 @@ export F77="gfortran -fsanitize=address"
 export FC="gfortran -fsanitize=address"
 
 export CXX="g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer"
-export CFLAGS="-g -O2 -Wall -pedantic -mtune=native -fsanitize=address"
+export CFLAGS="-g -O0 -Wall -pedantic -fsanitize=address"
 export DEFS=-DSWITCH_TO_REFCNT
-export FFLAGS="-g -O2 -mtune=native"
-export CXXFLAGS="-g -O2 -Wall -pedantic -mtune=native"
+export FFLAGS="-g -O0"
+export CXXFLAGS="-g -O0 -Wall -pedantic"
 export MAIN_LDFLAGS="-fsanitize=address,undefined -pthread"
 
 export configure_flags="--without-recommended-packages --disable-openmp"
